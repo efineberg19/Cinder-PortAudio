@@ -11,6 +11,7 @@ if( NOT TARGET Cinder-PortAudio )
 	
 	target_include_directories( Cinder-PortAudio PUBLIC ${CI_PA_SOURCE_PATH} )
 	target_include_directories( Cinder-PortAudio SYSTEM BEFORE PUBLIC ${CINDER_PATH}/include )
+	set_target_properties(Cinder-PortAudio PROPERTIES LINKER_LANGUAGE CXX)
 
 	if( NOT TARGET cinder )
 		include( "${CINDER_PATH}/proj/cmake/configure.cmake" )
